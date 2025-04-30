@@ -151,6 +151,6 @@ export const aboutMeData = {
 My diverse skill set allows me to approach projects from multiple angles, ensuring comprehensive solutions that meet modern digital needs. I specialize in video production, brand identity design, web development, and strategic social media management, complemented by my knowledge of AI technologies.
 
 I believe in staying ahead of industry trends and continuously expanding my capabilities to deliver innovative solutions that drive results.`,
-  profileImage: '/images/pfp_picture.png',
+  profileImage: '/src/pfp_picture.png',
   resumeUrl: '/resume.pdf',
 };
