@@ -1,0 +1,27 @@
+{
+  "name": "swapnilportfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swapnil-360/Protfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Swapnil-360/Protfolio/issues"
+  },
+  "homepage": "https://github.com/Swapnil-360/Protfolio#readme",
+  "devDependencies": {
+    "vite": "^8.0.13"
+  }
+}
