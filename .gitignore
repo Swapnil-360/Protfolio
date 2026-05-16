@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+.superdesign/
+designs/
+*.md
+!README.md
+package-lock.json
+.env
+.env.local
+IMAGE_TEMPLATE.html
+PORTFOLIO_SETUP_GUIDE.md
+IMAGES_GUIDE.md
+IMPLEMENTATION_PLAN_SUPERDESIGN.md
+design-system.md

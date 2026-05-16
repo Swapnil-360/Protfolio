@@ -1,0 +1,103 @@
+/* Design system CSS variables and utility snippets */
+:root {
+  --bg: #0c0c0c;
+  --surface: #141414;
+  --light-surface: #1c1c1c;
+  --accent: #e8553a;
+  --warm: #d4a574;
+  --text-primary: #f0ede8;
+  --text-secondary: #b0ada8;
+  --muted: #8a8a8a;
+
+  --transition-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Noise overlay utility */
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><filter id="n"><feTurbulence baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.03" fill="#fff"/></svg>');
+  opacity: 0.03;
+}
+
+/* Dot grid background */
+.dot-grid {
+  background-image: radial-gradient(circle, #333 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Utility for cubic-bezier transitions */
+.u-transition {
+  transition: all 0.32s var(--transition-ease);
+}
+
+/* Headline rules */
+.h-hero {
+  font-family: "Clash Grotesk", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 1.05;
+  color: var(--text-primary);
+}
+.body-text {
+  font-family: "Satoshi", system-ui, sans-serif;
+  color: var(--text-secondary);
+}
+
+/* Skill tag */
+.skill-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #1c1c1c;
+  color: var(--text-secondary);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+.skill-tag:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Orb container base */
+.orb-container {
+  width: 384px;
+  height: 384px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spin-slow {
+  animation: spin-slow 25s linear infinite;
+}
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Marquee */
+.skill-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+.skill-marquee .track {
+  display: flex;
+  gap: 32px;
+  animation: marquee 25s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

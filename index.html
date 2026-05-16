@@ -1,0 +1,1803 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swapnil — Frontend Developer &amp; Creative Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400;500;600;700&amp;f[]=satoshi@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["ClashGrotesk", "sans-serif"],
+              body: ["Satoshi", "sans-serif"],
+            },
+            colors: {
+              bg: "#0C0C0C",
+              surface: "#141414",
+              surfaceLight: "#1C1C1C",
+              accent: "#E8553A",
+              accentLight: "#F0764E",
+              warm: "#D4A574",
+              cream: "#F5E6D3",
+              muted: "#8A8A8A",
+              textPrimary: "#F0EDE8",
+              textSecondary: "#B0ADA8",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @keyframes float1 {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+          transform: translate(30px, -40px) rotate(90deg);
+        }
+        50% {
+          transform: translate(-20px, -80px) rotate(180deg);
+        }
+        75% {
+          transform: translate(40px, -30px) rotate(270deg);
+        }
+      }
+      @keyframes float2 {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        33% {
+          transform: translate(-50px, 30px) rotate(120deg);
+        }
+        66% {
+          transform: translate(30px, -50px) rotate(240deg);
+        }
+      }
+      @keyframes float3 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(20px, -60px) scale(1.15);
+        }
+      }
+      @keyframes float4 {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        50% {
+          transform: translate(-40px, 20px) rotate(180deg);
+        }
+      }
+      @keyframes float5 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1) rotate(0deg);
+        }
+        25% {
+          transform: translate(60px, -20px) scale(0.8) rotate(45deg);
+        }
+        75% {
+          transform: translate(-30px, 40px) scale(1.1) rotate(-45deg);
+        }
+      }
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @keyframes pulseGlow {
+        0%,
+        100% {
+          opacity: 0.4;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.8;
+          transform: scale(1.05);
+        }
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideLeft {
+        from {
+          opacity: 0;
+          transform: translateX(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      @keyframes spinSlow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .float1 {
+        animation: float1 12s ease-in-out infinite;
+      }
+      .float2 {
+        animation: float2 15s ease-in-out infinite;
+      }
+      .float3 {
+        animation: float3 10s ease-in-out infinite;
+      }
+      .float4 {
+        animation: float4 14s ease-in-out infinite;
+      }
+      .float5 {
+        animation: float5 18s ease-in-out infinite;
+      }
+      .gradient-shift {
+        animation: gradientShift 6s ease infinite;
+        background-size: 200% 200%;
+      }
+      .pulse-glow {
+        animation: pulseGlow 4s ease-in-out infinite;
+      }
+      .spin-slow {
+        animation: spinSlow 20s linear infinite;
+      }
+      .marquee {
+        animation: marquee 25s linear infinite;
+      }
+
+      .anim-up {
+        animation: slideUp 0.8s ease-out both;
+      }
+      .anim-up-d1 {
+        animation: slideUp 0.8s ease-out 0.1s both;
+      }
+      .anim-up-d2 {
+        animation: slideUp 0.8s ease-out 0.2s both;
+      }
+      .anim-up-d3 {
+        animation: slideUp 0.8s ease-out 0.3s both;
+      }
+      .anim-up-d4 {
+        animation: slideUp 0.8s ease-out 0.4s both;
+      }
+      .anim-up-d5 {
+        animation: slideUp 0.8s ease-out 0.5s both;
+      }
+      .anim-up-d6 {
+        animation: slideUp 0.8s ease-out 0.6s both;
+      }
+      .anim-left {
+        animation: slideLeft 0.8s ease-out 0.4s both;
+      }
+      .anim-fade {
+        animation: fadeIn 1s ease-out 0.6s both;
+      }
+
+      .blink-cursor::after {
+        content: "|";
+        animation: blink 1s step-end infinite;
+        color: #e8553a;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0c0c0c;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #e8553a;
+      }
+
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+      }
+      .tag-hover {
+        transition: all 0.3s ease;
+      }
+      .tag-hover:hover {
+        background-color: #e8553a;
+        color: #0c0c0c;
+      }
+
+      .timeline-dot {
+        position: relative;
+      }
+      .timeline-dot::before {
+        content: "";
+        position: absolute;
+        left: -29px;
+        top: 6px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #e8553a;
+        border: 3px solid #0c0c0c;
+        z-index: 2;
+        transition: all 0.3s ease;
+      }
+      .timeline-dot:hover::before {
+        transform: scale(1.4);
+        box-shadow: 0 0 20px rgba(232, 85, 58, 0.5);
+      }
+
+      .noise-overlay {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      }
+
+      .skill-card {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .skill-card:hover {
+        transform: translateY(-4px) scale(1.02);
+        border-color: #e8553a;
+      }
+      .skill-card:hover .skill-icon {
+        color: #e8553a;
+        transform: scale(1.15);
+      }
+      .skill-icon {
+        transition: all 0.3s ease;
+      }
+
+      .project-card {
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .project-card:hover {
+        transform: translateY(-6px);
+      }
+      .project-card:hover .project-overlay {
+        opacity: 1;
+      }
+      .project-card:hover .project-title {
+        color: #e8553a;
+      }
+      .project-overlay {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .social-icon {
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .social-icon:hover {
+        transform: translateY(-4px) scale(1.1);
+        color: #e8553a;
+      }
+
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #e8553a;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .grid-pattern {
+        background-image: radial-gradient(circle, #333 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="min-h-screen bg-bg text-textPrimary font-body noise-overlay">
+      <!-- NAV -->
+      <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-bg border-b border-white/5"
+      >
+        <div
+          class="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between"
+        >
+          <a
+            id="nav-logo-link"
+            href="#hero"
+            class="font-display font-bold text-xl tracking-tight group flex items-center gap-2"
+          >
+            <img
+              src="./images/profile/avatar.jpg"
+              alt="Swapnil"
+              class="w-8 h-8 rounded-lg object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <span>Swapnil</span>
+          </a>
+          <div
+            class="hidden md:flex items-center gap-8 text-sm text-textSecondary"
+          >
+            <a
+              id="nav-about-link"
+              href="#about"
+              class="nav-link hover:text-textPrimary transition-colors"
+              >About</a
+            >
+            <a
+              id="nav-skills-link"
+              href="#skills"
+              class="nav-link hover:text-textPrimary transition-colors"
+              >Skills</a
+            >
+            <a
+              id="nav-projects-link"
+              href="#projects"
+              class="nav-link hover:text-textPrimary transition-colors"
+              >Projects</a
+            >
+            <a
+              id="nav-experience-link"
+              href="#experience"
+              class="nav-link hover:text-textPrimary transition-colors"
+              >Experience</a
+            >
+            <a
+              id="nav-contact-link"
+              href="#contact"
+              class="nav-link hover:text-textPrimary transition-colors"
+              >Contact</a
+            >
+          </div>
+          <a
+            id="nav-hire-btn"
+            href="#contact"
+            class="hidden md:flex items-center gap-2 bg-accent hover:bg-accentLight text-bg text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-accent/20"
+          >
+            <iconify-icon icon="lucide:send" class="text-sm"></iconify-icon>
+            Hire Me
+          </a>
+          <button class="md:hidden text-textPrimary">
+            <iconify-icon icon="lucide:menu" class="text-2xl"></iconify-icon>
+          </button>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <section
+        id="hero"
+        class="relative min-h-screen flex items-center overflow-hidden pt-16"
+      >
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 pointer-events-none">
+          <!-- Grid pattern -->
+          <div class="absolute inset-0 grid-pattern opacity-10"></div>
+          <!-- Gradient orbs -->
+          <div
+            class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl pulse-glow"
+          ></div>
+          <div
+            class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-warm/10 rounded-full blur-3xl pulse-glow"
+            style="animation-delay: 2s"
+          ></div>
+          <!-- Floating shapes -->
+          <div class="float1 absolute top-20 right-40">
+            <div
+              class="w-16 h-16 border-2 border-accent/30 rounded-xl rotate-45"
+            ></div>
+          </div>
+          <div class="float2 absolute top-40 left-32">
+            <div class="w-12 h-12 bg-warm/20 rounded-full"></div>
+          </div>
+          <div class="float3 absolute bottom-40 right-60">
+            <div class="w-20 h-20 border-2 border-warm/20 rounded-full"></div>
+          </div>
+          <div class="float4 absolute top-60 right-1/3">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              class="text-accent/30"
+            >
+              <polygon
+                points="20,2 38,38 2,38"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              ></polygon>
+            </svg>
+          </div>
+          <div class="float5 absolute bottom-60 left-1/4">
+            <div class="w-8 h-8 bg-accent/15 rotate-45"></div>
+          </div>
+          <div
+            class="float2 absolute top-1/3 left-2/3"
+            style="animation-delay: 3s"
+          >
+            <svg width="24" height="24" class="text-warm/30">
+              <circle cx="12" cy="12" r="4" fill="currentColor"></circle>
+            </svg>
+          </div>
+          <div
+            class="float1 absolute bottom-32 left-40"
+            style="animation-delay: 5s"
+          >
+            <div
+              class="w-6 h-6 border border-accent/20 rounded-sm rotate-12"
+            ></div>
+          </div>
+          <!-- Spinning ring -->
+          <div
+            class="absolute top-1/2 right-24 -translate-y-1/2 spin-slow opacity-20"
+          >
+            <svg width="200" height="200" viewBox="0 0 200 200">
+              <circle
+                cx="100"
+                cy="100"
+                r="90"
+                fill="none"
+                stroke="#E8553A"
+                stroke-width="1"
+                stroke-dasharray="8 12"
+              ></circle>
+            </svg>
+          </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+          <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Left content -->
+            <div>
+              <div class="anim-up flex items-center gap-3 mb-6">
+                <span class="h-px w-12 bg-accent"></span>
+                <span
+                  class="text-accent text-sm font-medium tracking-wider uppercase"
+                  >Available for Hire</span
+                >
+              </div>
+              <h1
+                class="font-display font-bold text-5xl lg:text-7xl leading-[1.05] tracking-tight anim-up-d1"
+              >
+                Frontend<br />
+                <span class="text-accent">Developer</span><br />
+                <span class="text-warm">&amp;</span> Creative<br />
+                <span
+                  class="bg-gradient-to-r from-accent to-warm bg-clip-text text-transparent gradient-shift"
+                  >Designer</span
+                >
+              </h1>
+              <p
+                class="text-textSecondary text-lg mt-6 max-w-lg leading-relaxed anim-up-d2"
+              >
+                I build beautiful, fast web & app experiences using Claude and Cursor to work smarter.
+                I deploy on Vercel and Netlify, collaborate on GitHub, and design in Figma. 
+                Always shipping quality work, always learning something new.
+              </p>
+              <div class="flex flex-wrap gap-4 mt-8 anim-up-d3">
+                <a
+                  id="hero-work-btn"
+                  href="#projects"
+                  class="group bg-accent hover:bg-accentLight text-bg font-medium px-7 py-3.5 rounded-full flex items-center gap-2 transition-all duration-300 hover:shadow-xl hover:shadow-accent/25"
+                >
+                  View My Work
+                  <iconify-icon
+                    icon="lucide:arrow-down-right"
+                    class="transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5"
+                  ></iconify-icon>
+                </a>
+                <a
+                  id="hero-contact-btn"
+                  href="#contact"
+                  class="group border border-white/15 hover:border-accent/50 text-textPrimary font-medium px-7 py-3.5 rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-accent/5"
+                >
+                  Get In Touch
+                  <iconify-icon
+                    icon="lucide:mail"
+                    class="transition-transform group-hover:scale-110"
+                  ></iconify-icon>
+                </a>
+              </div>
+              <div
+                class="flex items-center gap-6 mt-10 anim-up-d4 text-textSecondary text-sm"
+              >
+                <div class="flex items-center gap-2">
+                  <iconify-icon
+                    icon="lucide:map-pin"
+                    class="text-accent"
+                  ></iconify-icon>
+                  Dhaka, Bangladesh
+                </div>
+                <div class="flex items-center gap-2">
+                  <iconify-icon
+                    icon="lucide:graduation-cap"
+                    class="text-accent"
+                  ></iconify-icon>
+                  BSc CSE, BUBT
+                </div>
+              </div>
+            </div>
+
+            <!-- Right visual element -->
+            <div
+              class="relative anim-left hidden lg:flex items-center justify-center"
+            >
+              <!-- Main visual container -->
+              <div class="relative w-96 h-96">
+                <!-- Outer ring -->
+                <div
+                  class="absolute inset-0 rounded-full border border-white/5 spin-slow"
+                ></div>
+                <!-- Inner decorative ring -->
+                <div
+                  class="absolute inset-8 rounded-full border border-accent/10 spin-slow"
+                  style="animation-direction: reverse; animation-duration: 30s"
+                ></div>
+
+                <!-- Central avatar -->
+                <div
+                  class="absolute inset-16 rounded-full bg-gradient-to-br from-surfaceLight to-surface border border-white/10 flex items-center justify-center overflow-hidden z-10"
+                >
+                  <img
+                    src="./images/profile/profile.jpg"
+                    alt="Swapnil profile photo"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <!-- Orbiting tech icons -->
+                <div
+                  class="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-12 bg-surface border border-accent/30 rounded-xl flex items-center justify-center float3"
+                >
+                  <iconify-icon
+                    icon="logos:react"
+                    class="text-xl"
+                  ></iconify-icon>
+                </div>
+                <div
+                  class="absolute top-1/2 -right-3 -translate-y-1/2 w-12 h-12 bg-surface border border-warm/30 rounded-xl flex items-center justify-center float1"
+                  style="animation-delay: 2s"
+                >
+                  <iconify-icon
+                    icon="logos:nextjs-icon"
+                    class="text-xl"
+                  ></iconify-icon>
+                </div>
+                <div
+                  class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 h-12 bg-surface border border-accent/30 rounded-xl flex items-center justify-center float2"
+                  style="animation-delay: 1s"
+                >
+                  <iconify-icon
+                    icon="logos:figma"
+                    class="text-xl"
+                  ></iconify-icon>
+                </div>
+                <div
+                  class="absolute top-1/2 -left-3 -translate-y-1/2 w-12 h-12 bg-surface border border-warm/30 rounded-xl flex items-center justify-center float4"
+                  style="animation-delay: 3s"
+                >
+                  <iconify-icon
+                    icon="mdi:github"
+                    class="text-xl"
+                  ></iconify-icon>
+                </div>
+                <div
+                  class="absolute top-1/4 right-1/3 w-10 h-10 bg-surface border border-accent/30 rounded-lg flex items-center justify-center float1"
+                  style="animation-delay: 0.5s"
+                >
+                  <img
+                    src="./images/icons/vercel.svg"
+                    alt="Vercel"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <div
+                  class="absolute bottom-1/4 left-1/3 w-10 h-10 bg-surface border border-warm/30 rounded-lg flex items-center justify-center float2"
+                  style="animation-delay: 2.5s"
+                >
+                  <img
+                    src="./images/icons/canva.png"
+                    alt="Canva"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+                <div
+                  class="absolute top-2/3 -right-1 w-10 h-10 bg-surface border border-accent/30 rounded-lg flex items-center justify-center float3"
+                  style="animation-delay: 1.5s"
+                >
+                  <img
+                    src="./images/icons/capcut.png"
+                    alt="CapCut"
+                    class="w-6 h-6 object-contain"
+                  />
+                </div>
+
+                <!-- Corner accents -->
+                <div
+                  class="absolute top-8 right-2 w-10 h-10 bg-surface border border-white/10 rounded-lg flex items-center justify-center float5"
+                >
+                  <iconify-icon
+                    icon="logos:tailwindcss-icon"
+                    class="text-lg"
+                  ></iconify-icon>
+                </div>
+                <div
+                  class="absolute bottom-8 left-2 w-10 h-10 bg-surface border border-white/10 rounded-lg flex items-center justify-center float3"
+                  style="animation-delay: 4s"
+                >
+                  <iconify-icon
+                    icon="logos:adobe-photoshop"
+                    class="text-lg"
+                  ></iconify-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div
+          class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 anim-fade"
+        >
+          <span class="text-xs text-muted tracking-widest uppercase"
+            >Scroll</span
+          >
+          <div
+            class="w-5 h-8 border border-white/20 rounded-full flex justify-center pt-1.5"
+          >
+            <div class="w-1 h-2 bg-accent rounded-full animate-bounce"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARQUEE -->
+      <div class="py-12 lg:py-16">
+        <div
+          class="relative overflow-hidden border border-white/5 rounded-2xl py-6 bg-surface max-w-5xl mx-auto px-6 lg:px-12"
+        >
+          <div class="flex whitespace-nowrap">
+          <div
+            class="marquee flex items-center gap-8 text-sm text-muted font-medium"
+          >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-accent rounded-full"></span
+              >React.js</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-warm rounded-full"></span
+              >Next.js</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-accent rounded-full"></span
+              >TypeScript</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-warm rounded-full"></span>Tailwind
+              CSS</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Framer
+              Motion</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-warm rounded-full"></span>Adobe
+              Photoshop</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-accent rounded-full"></span
+              >Figma</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-warm rounded-full"></span>Premiere
+              Pro</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-accent rounded-full"></span
+              >Three.js</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-warm rounded-full"></span>UI/UX
+              Design</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Git &amp;
+              GitHub</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-warm rounded-full"></span>After
+              Effects</span
+            >
+            <!-- Duplicate for seamless loop -->
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-accent rounded-full"></span
+              >React.js</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-warm rounded-full"></span
+              >Next.js</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-accent rounded-full"></span
+              >TypeScript</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-warm rounded-full"></span>Tailwind
+              CSS</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Framer
+              Motion</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-warm rounded-full"></span>Adobe
+              Photoshop</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-accent rounded-full"></span
+              >Figma</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-warm rounded-full"></span>Premiere
+              Pro</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-accent rounded-full"></span
+              >Three.js</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-warm rounded-full"></span>UI/UX
+              Design</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Git &amp;
+              GitHub</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="w-1.5 h-1.5 bg-warm rounded-full"></span>After
+              Effects</span
+            >
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <section id="about" class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="flex items-center gap-3 mb-8 justify-center">
+            <span class="h-px w-12 bg-accent"></span>
+            <span
+              class="text-accent text-sm font-medium tracking-wider uppercase"
+              >About Me</span
+            >
+            <span class="h-px w-12 bg-accent"></span>
+          </div>
+          <h2
+            class="font-display font-bold text-4xl lg:text-5xl tracking-tight text-center mb-12 max-w-3xl mx-auto"
+          >
+            I believe in design that
+            <span class="text-accent">actually works</span> for people
+          </h2>
+          
+          <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <p class="text-textSecondary text-lg leading-relaxed">
+                I'm Swapnil, a vibe coder at BUBT who's obsessed with building things that feel good.
+                I use Claude and Cursor for smart coding, deploy on Vercel and Netlify for speed,
+                and keep everything organized on GitHub. For design, Figma and Canva are my go-to tools.
+                Video editing? I'm comfortable with CapCut Pro and basic Premiere Pro.
+              </p>
+              <p class="text-textSecondary text-lg leading-relaxed mt-4">
+                I'm not about writing everything from scratch &mdash; I'm about shipping fast and smart.
+                AI-assisted development isn't the future, it's now. I love partnering with tools that
+                understand the vision, so I can focus on what actually matters: making things people love to use.
+              </p>
+            </div>
+            <div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div
+                  class="p-4 rounded-2xl bg-surface border border-white/5"
+                >
+                  <div class="text-xs text-accent font-medium uppercase tracking-wider">Full Name</div>
+                  <div class="text-sm text-textPrimary mt-1 font-medium">Md. Miftahur Rahman Swapnil</div>
+                </div>
+                <div
+                  class="p-4 rounded-2xl bg-surface border border-white/5"
+                >
+                  <div class="text-xs text-warm font-medium uppercase tracking-wider">Date of Birth</div>
+                  <div class="text-sm text-textPrimary mt-1 font-medium">25th January, 2002</div>
+                </div>
+                <div
+                  class="p-4 rounded-2xl bg-surface border border-white/5"
+                >
+                  <div class="text-xs text-accent font-medium uppercase tracking-wider">Location</div>
+                  <div class="text-sm text-textPrimary mt-1 font-medium">Dhaka, Bangladesh</div>
+                </div>
+                <div
+                  class="p-4 rounded-2xl bg-surface border border-white/5"
+                >
+                  <div class="text-xs text-warm font-medium uppercase tracking-wider">Degree</div>
+                  <div class="text-sm text-textPrimary mt-1 font-medium">BSc. in CSE, BUBT</div>
+                </div>
+                <div
+                  class="p-4 rounded-2xl bg-surface border border-white/5"
+                >
+                  <div class="text-xs text-accent font-medium uppercase tracking-wider">Expected Graduation</div>
+                  <div class="text-sm text-textPrimary mt-1 font-medium">2026</div>
+                </div>
+                <div
+                  class="p-4 rounded-2xl bg-surface border border-white/5"
+                >
+                  <div class="text-xs text-warm font-medium uppercase tracking-wider">Availability</div>
+                  <div class="text-sm text-textPrimary mt-1 font-medium">Open for freelance work</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="py-24 lg:py-32 bg-surface relative">
+        <div class="absolute inset-0 grid-pattern opacity-5"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="text-center mb-16">
+            <div class="flex items-center justify-center gap-3 mb-4">
+              <span class="h-px w-12 bg-accent"></span>
+              <span
+                class="text-accent text-sm font-medium tracking-wider uppercase"
+                >SKILLS</span
+              >
+              <span class="h-px w-12 bg-accent"></span>
+            </div>
+            <h2
+              class="font-display font-bold text-4xl lg:text-5xl tracking-tight"
+            >
+              Tools &amp; Technologies I <span class="text-accent">Master</span>
+            </h2>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Development -->
+            <div
+              class="skill-card bg-bg rounded-2xl p-6 border border-white/5 cursor-default"
+            >
+              <div
+                class="skill-icon w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5"
+              >
+                <iconify-icon
+                  icon="mdi:lightning-bolt"
+                  class="text-2xl text-accent"
+                ></iconify-icon>
+              </div>
+              <h3 class="font-display font-semibold text-lg mb-3">Development</h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Claude</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Cursor</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >VS Code</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >React.js</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Next.js</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Tailwind CSS</span
+                >
+              </div>
+            </div>
+
+            <!-- Deployment & DevOps -->
+            <div
+              class="skill-card bg-bg rounded-2xl p-6 border border-white/5 cursor-default"
+            >
+              <div
+                class="skill-icon w-12 h-12 bg-warm/10 rounded-xl flex items-center justify-center mb-5"
+              >
+                <iconify-icon
+                  icon="lucide:server"
+                  class="text-2xl text-warm"
+                ></iconify-icon>
+              </div>
+              <h3 class="font-display font-semibold text-lg mb-3">Hosting & DevOps</h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Vercel</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Netlify</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Namecheap</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Git &amp; GitHub</span
+                >
+              </div>
+            </div>
+
+            <!-- Design -->
+            <div
+              class="skill-card bg-bg rounded-2xl p-6 border border-white/5 cursor-default"
+            >
+              <div
+                class="skill-icon w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5"
+              >
+                <iconify-icon
+                  icon="lucide:palette"
+                  class="text-2xl text-accent"
+                ></iconify-icon>
+              </div>
+              <h3 class="font-display font-semibold text-lg mb-3">Design</h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Figma</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Canva</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >UI/UX Design</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Prototyping</span
+                >
+              </div>
+            </div>
+
+            <!-- Video Editing -->
+            <div
+              class="skill-card bg-bg rounded-2xl p-6 border border-white/5 cursor-default"
+            >
+              <div
+                class="skill-icon w-12 h-12 bg-warm/10 rounded-xl flex items-center justify-center mb-5"
+              >
+                <iconify-icon
+                  icon="lucide:video"
+                  class="text-2xl text-warm"
+                ></iconify-icon>
+              </div>
+              <h3 class="font-display font-semibold text-lg mb-3">Video Editing</h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >CapCut Pro</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Premiere Pro</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Color Grading</span
+                >
+                <span
+                  class="text-xs px-3 py-1.5 bg-surfaceLight rounded-full text-textSecondary tag-hover cursor-default"
+                  >Motion Graphics</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="flex items-center justify-center gap-3 mb-8">
+            <span class="h-px w-12 bg-accent"></span>
+            <span
+              class="text-accent text-sm font-medium tracking-wider uppercase"
+              >Selected Work</span
+            >
+            <span class="h-px w-12 bg-accent"></span>
+          </div>
+          <div class="flex flex-col items-center justify-between mb-16">
+            <h2
+              class="font-display font-bold text-4xl lg:text-5xl tracking-tight text-center"
+            >
+              Featured <span class="text-accent">Projects</span>
+            </h2>
+            <a
+              id="projects-github-link"
+              href="https://github.com/Swapnil-360"
+              target="_blank"
+              class="mt-6 text-textSecondary hover:text-accent transition-colors flex items-center gap-2 text-sm"
+            >
+              View all on GitHub
+              <iconify-icon icon="lucide:arrow-up-right"></iconify-icon>
+            </a>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project 1: Edu51Five (Featured) -->
+            <div
+              class="project-card lg:col-span-2 bg-surface rounded-2xl border border-white/5 overflow-hidden group"
+            >
+              <div
+                class="relative h-56 bg-surfaceLight flex items-center justify-center group overflow-hidden"
+              >
+                <img
+                  src="./images/projects/edu51five.png"
+                  alt="Edu51Five project preview"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-bg/70 via-bg/15 to-transparent"></div>
+
+                <!-- Live badge -->
+                <div class="absolute top-4 right-4 flex items-center gap-1.5 z-20 bg-accent/20 backdrop-blur-sm px-3 py-1.5 rounded-full border border-accent/40 group-hover:bg-accent/40 transition-all">
+                  <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+                  <span class="text-xs font-medium text-accent">Live</span>
+                </div>
+                
+                <div
+                  class="project-overlay absolute inset-0 bg-bg/70 backdrop-blur-md flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <a
+                    id="project-edu-live"
+                    href="https://edu51five.vercel.app"
+                    target="_blank"
+                    class="px-4 py-2 bg-accent text-bg rounded-full text-sm font-medium hover:bg-accentLight transition-colors flex items-center gap-1.5"
+                  >
+                    <iconify-icon icon="lucide:external-link"></iconify-icon>
+                    Live
+                  </a>
+                  <a
+                    id="project-edu-github"
+                    href="https://github.com/Swapnil-360/Edu51Five"
+                    target="_blank"
+                    class="px-4 py-2 bg-white/10 text-textPrimary rounded-full text-sm font-medium hover:bg-white/20 transition-colors flex items-center gap-1.5"
+                  >
+                    <iconify-icon icon="lucide:github"></iconify-icon> Code
+                  </a>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <span
+                    class="text-xs font-medium text-accent bg-accent/10 px-2.5 py-1 rounded-full"
+                    >Featured</span
+                  >
+                  <span class="text-xs text-muted">Web</span>
+                </div>
+                <h3
+                  class="project-title font-display font-semibold text-xl transition-colors"
+                >
+                  Edu51Five
+                </h3>
+                <p class="text-textSecondary text-sm mt-2">
+                  Educational portal for intake 51 students with course
+                  management and resources.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >React</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >Next.js</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >TypeScript</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: Portfolio for Prince -->
+            <div
+              class="project-card bg-surface rounded-2xl border border-white/5 overflow-hidden group"
+            >
+              <div
+                class="relative h-56 bg-surfaceLight flex items-center justify-center group overflow-hidden"
+              >
+                <img
+                  src="./images/projects/sbprince.png"
+                  alt="Portfolio for Prince preview"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-bg/70 via-bg/15 to-transparent"></div>
+
+                <!-- Live badge -->
+                <div class="absolute top-4 right-4 flex items-center gap-1.5 z-20 bg-accent/20 backdrop-blur-sm px-3 py-1.5 rounded-full border border-accent/40 group-hover:bg-accent/40 transition-all">
+                  <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+                  <span class="text-xs font-medium text-accent">Live</span>
+                </div>
+
+                <div
+                  class="project-overlay absolute inset-0 bg-bg/70 backdrop-blur-md flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <a
+                    id="project-prince-live"
+                    href="https://www.sbprince.com/"
+                    target="_blank"
+                    class="px-5 py-2.5 bg-accent text-bg rounded-full text-sm font-medium hover:bg-accentLight transition-colors flex items-center gap-2"
+                  >
+                    <iconify-icon icon="lucide:external-link"></iconify-icon>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="text-xs text-muted">Web</span>
+                <h3
+                  class="project-title font-display font-semibold text-lg transition-colors"
+                >
+                  Portfolio for Prince
+                </h3>
+                <p class="text-textSecondary text-sm mt-2">
+                  Took a vision and turned it into something alive. Built with Next.js, animated with
+                  Framer Motion. Fast load times, smooth interactions, and a design that actually converts.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >Next.js</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >Framer Motion</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >Tailwind CSS</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: Pawfect Match -->
+            <div
+              class="project-card bg-surface rounded-2xl border border-white/5 overflow-hidden group"
+            >
+              <div
+                class="relative h-48 bg-surfaceLight flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  src="./images/projects/PawfectMatch.jpg"
+                  alt="Pawfect Match project preview"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-bg/70 via-bg/15 to-transparent"></div>
+
+                <div
+                  class="project-overlay absolute inset-0 bg-bg/70 backdrop-blur-md flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <a
+                    id="project-paw-github"
+                    href="https://github.com/orgs/PawfectMatch2-0/repositories"
+                    target="_blank"
+                    class="px-4 py-2 bg-white/10 text-textPrimary rounded-full text-sm font-medium hover:bg-white/20 transition-colors flex items-center gap-1.5"
+                  >
+                    <iconify-icon icon="lucide:github"></iconify-icon> Code
+                  </a>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="text-xs text-muted">Mobile App</span>
+                <h3
+                  class="project-title font-display font-semibold text-lg mt-1 transition-colors"
+                >
+                  Pawfect Match
+                </h3>
+                <p class="text-textSecondary text-sm mt-2">
+                  Pet adoption and community platform connecting pet lovers with
+                  animals in need.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >React Native</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >Firebase</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4: MuteBD -->
+            <div
+              class="project-card bg-surface rounded-2xl border border-white/5 overflow-hidden group"
+            >
+              <div
+                class="relative h-48 bg-gradient-to-br from-warm/10 via-surfaceLight to-accent/15 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <iconify-icon
+                    icon="lucide:accessibility"
+                    class="text-4xl text-warm/60 mb-2"
+                  ></iconify-icon>
+                  <div class="text-sm text-muted">Social Impact</div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="text-xs text-muted">Mobile App</span>
+                <h3
+                  class="project-title font-display font-semibold text-lg mt-1 transition-colors"
+                >
+                  MuteBD
+                </h3>
+                <p class="text-textSecondary text-sm mt-2">
+                  Mobile application for the hearing-impaired community in
+                  Bangladesh, promoting accessibility.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >React Native</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >Accessibility</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 5: Blood Management System -->
+            <div
+              class="project-card bg-surface rounded-2xl border border-white/5 overflow-hidden group"
+            >
+              <div
+                class="relative h-48 bg-gradient-to-br from-accent/15 via-surfaceLight to-warm/10 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <iconify-icon
+                    icon="lucide:droplets"
+                    class="text-4xl text-accent/60 mb-2"
+                  ></iconify-icon>
+                  <div class="text-sm text-muted">Healthcare</div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="text-xs text-muted">Web</span>
+                <h3
+                  class="project-title font-display font-semibold text-lg mt-1 transition-colors"
+                >
+                  Blood Management System
+                </h3>
+                <p class="text-textSecondary text-sm mt-2">
+                  University project for managing blood donation and request
+                  workflows efficiently.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >PHP</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >MySQL</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-muted"
+                    >Bootstrap</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE & EDUCATION -->
+      <section id="experience" class="py-24 lg:py-32 bg-surface relative">
+        <div class="absolute inset-0 grid-pattern opacity-5"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="flex items-center justify-center gap-3 mb-8">
+            <span class="h-px w-12 bg-accent"></span>
+            <span
+              class="text-accent text-sm font-medium tracking-wider uppercase"
+              >Experience</span
+            >
+            <span class="h-px w-12 bg-accent"></span>
+          </div>
+          <h2
+            class="font-display font-bold text-3xl lg:text-4xl tracking-tight text-center mb-16"
+          >
+            My <span class="text-accent">Journey</span>
+          </h2>
+          <div class="grid lg:grid-cols-2 gap-16">
+            <!-- Experience -->
+            <div>
+
+              <div class="relative pl-6 border-l border-white/10">
+                <div class="mb-10 timeline-dot">
+                  <div class="flex items-center gap-3 mb-1">
+                    <h3 class="font-display font-semibold text-lg">
+                      AI-Powered Development &amp; Design
+                    </h3>
+                  </div>
+                  <span class="text-sm text-accent">2023 — Present</span>
+                  <p class="text-textSecondary text-sm mt-2">
+                    Building modern web apps with Claude and Cursor. Deploying to Vercel and Netlify.
+                    Managing code on GitHub. Designing interfaces in Figma and bringing ideas to life
+                    with CapCut Pro. Shipping smart, shipping fast.
+                  </p>
+                </div>
+
+                <div class="mb-10 timeline-dot">
+                  <h3 class="font-display font-semibold text-lg">
+                Portfolio That Moves
+              </h3>
+              <span class="text-sm text-warm">Feb 2026 — Mar 2026</span>
+              <p class="text-textSecondary text-sm mt-2">
+                Took a vision and made it real. Smooth animations, lightning-fast load times,
+                mobile-first thinking. Used Claude for the smart ideas, deployed on Vercel.
+                The result? A portfolio that actually converts.
+
+                <div class="mb-10 timeline-dot">
+                  <h3 class="font-display font-semibold text-lg">
+                    Leading Edu51Five
+                  </h3>
+                  <span class="text-sm text-accent">2024 — Present</span>
+                  <p class="text-textSecondary text-sm mt-2">
+                    Building an educational portal that just works. Managing the dev team,
+                    handling deployment on Vercel, keeping everything organized on GitHub.
+                    Making learning frictionless for 51 students.
+                  </p>
+                </div>
+
+                <div class="mb-10 timeline-dot">
+                  <h3 class="font-display font-semibold text-lg">
+                Designing Pawfect Match
+              </h3>
+              <span class="text-sm text-warm">2024 — Present</span>
+              <p class="text-textSecondary text-sm mt-2">
+                Frontend & UI/UX for a pet adoption app. Designed in Figma, coded smart with React.
+                Making adoption smooth and beautiful. This is the kind of work that matters.
+              </p>
+                </div>
+
+                <div class="timeline-dot">
+                  <h3 class="font-display font-semibold text-lg">
+                    Creative Storyteller: Design &amp; Motion
+                  </h3>
+                  <span class="text-sm text-accent">2022 — Present</span>
+                  <p class="text-textSecondary text-sm mt-2">
+                    Designing posters and graphics in Figma and Canva. Creating videos with CapCut Pro
+                    and basic edits in Premiere Pro. Making BUBT Tech &amp; CSE Clubs look good and feel alive.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Education & Research -->
+            <div>
+              <div class="flex items-center justify-center gap-3 mb-8">
+                <span class="h-px w-12 bg-warm"></span>
+                <span
+                  class="text-warm text-sm font-medium tracking-wider uppercase"
+                  >Education</span
+                >
+                <span class="h-px w-12 bg-warm"></span>
+              </div>
+              <h2
+                class="font-display font-bold text-3xl lg:text-4xl tracking-tight text-center mb-12"
+              >
+                Academic <span class="text-warm">Background</span>
+              </h2>
+
+              <div class="bg-bg rounded-2xl p-8 border border-white/5 mb-8">
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-14 h-14 bg-warm/10 rounded-xl flex items-center justify-center flex-shrink-0"
+                  >
+                    <iconify-icon
+                      icon="lucide:graduation-cap"
+                      class="text-2xl text-warm"
+                    ></iconify-icon>
+                  </div>
+                  <div>
+                    <h3 class="font-display font-semibold text-lg">
+                      BSc in Computer Science &amp; Engineering
+                    </h3>
+                    <p class="text-warm text-sm mt-1">
+                      Bangladesh University of Business and Technology (BUBT)
+                    </p>
+                    <p class="text-muted text-sm mt-1">
+                      2022 — 2026 (Expected) · Dhaka, Bangladesh
+                    </p>
+                    <div class="mt-4">
+                      <p
+                        class="text-xs text-muted uppercase tracking-wider mb-2"
+                      >
+                        Relevant Courses
+                      </p>
+                      <div class="flex flex-wrap gap-2">
+                        <span
+                          class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-textSecondary"
+                          >Data Structures</span
+                        >
+                        <span
+                          class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-textSecondary"
+                          >Web Technologies</span
+                        >
+                        <span
+                          class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-textSecondary"
+                          >DBMS</span
+                        >
+                        <span
+                          class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-textSecondary"
+                          >Software Eng.</span
+                        >
+                        <span
+                          class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-textSecondary"
+                          >AI</span
+                        >
+                        <span
+                          class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-textSecondary"
+                          >HCI</span
+                        >
+                        <span
+                          class="text-xs px-2.5 py-1 bg-surfaceLight rounded-full text-textSecondary"
+                          >Networks</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Research Interests -->
+              <div class="flex items-center justify-center gap-3 mb-8">
+                <span class="h-px w-12 bg-accent"></span>
+                <span
+                  class="text-accent text-sm font-medium tracking-wider uppercase"
+                  >Research Interests</span
+                >
+                <span class="h-px w-12 bg-accent"></span>
+              </div>
+              <div class="space-y-4">
+                <div
+                  class="bg-bg rounded-xl p-5 border border-white/5 flex items-start gap-4 skill-card"
+                >
+                  <div
+                    class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 skill-icon"
+                  >
+                    <iconify-icon
+                      icon="lucide:layers"
+                      class="text-lg text-accent"
+                    ></iconify-icon>
+                  </div>
+                  <div>
+                    <h4 class="font-display font-medium text-sm">
+                      Design Systems &amp; Component Architecture
+                    </h4>
+                    <p class="text-xs text-muted mt-1">
+                      Building scalable, reusable UI component libraries
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-bg rounded-xl p-5 border border-white/5 flex items-start gap-4 skill-card"
+                >
+                  <div
+                    class="w-10 h-10 bg-warm/10 rounded-lg flex items-center justify-center flex-shrink-0 skill-icon"
+                  >
+                    <iconify-icon
+                      icon="lucide:cpu"
+                      class="text-lg text-warm"
+                    ></iconify-icon>
+                  </div>
+                  <div>
+                    <h4 class="font-display font-medium text-sm">
+                      ESP32-Based Automation for Smart Classrooms
+                    </h4>
+                    <p class="text-xs text-muted mt-1">
+                      IoT systems for educational environments
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-bg rounded-xl p-5 border border-white/5 flex items-start gap-4 skill-card"
+                >
+                  <div
+                    class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 skill-icon"
+                  >
+                    <iconify-icon
+                      icon="lucide:brain"
+                      class="text-lg text-accent"
+                    ></iconify-icon>
+                  </div>
+                  <div>
+                    <h4 class="font-display font-medium text-sm">
+                      EEG-Based Motor Imagery Classification
+                    </h4>
+                    <p class="text-xs text-muted mt-1">
+                      Deep learning for paralysis rehabilitation
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="py-24 lg:py-32 relative">
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
+        ></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="text-center mb-16">
+            <div class="flex items-center justify-center gap-3 mb-4">
+              <span class="h-px w-12 bg-accent"></span>
+              <span
+                class="text-accent text-sm font-medium tracking-wider uppercase"
+                >Get In Touch</span
+              >
+              <span class="h-px w-12 bg-accent"></span>
+            </div>
+            <h2
+              class="font-display font-bold text-4xl lg:text-6xl tracking-tight"
+            >
+              Let's Build Something<br /><span class="text-accent"
+                >Amazing</span
+              >
+              Together
+            </h2>
+            <p class="text-textSecondary text-lg mt-4 max-w-xl mx-auto">
+              I'm currently looking for junior frontend developer roles,
+              freelance projects, and internship opportunities. Let's connect!
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-16">
+            <a
+              id="contact-email-card"
+              href="mailto:miftahurr503@gmail.com"
+              class="group bg-surface rounded-2xl p-6 border border-white/5 text-center card-hover hover:border-accent/30"
+            >
+              <div
+                class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors"
+              >
+                <iconify-icon
+                  icon="lucide:mail"
+                  class="text-xl text-accent"
+                ></iconify-icon>
+              </div>
+              <h3 class="font-display font-medium text-sm mb-1">Send Email</h3>
+              <p class="text-textSecondary text-xs">Click to compose message</p>
+            </a>
+
+            <a
+              id="contact-linkedin-card"
+              href="https://www.linkedin.com/in/mr-swapnil/"
+              target="_blank"
+              class="group bg-surface rounded-2xl p-6 border border-white/5 text-center card-hover hover:border-warm/30"
+            >
+              <div
+                class="w-12 h-12 bg-warm/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-warm/20 transition-colors"
+              >
+                <iconify-icon
+                  icon="mdi:linkedin"
+                  class="text-xl text-warm"
+                ></iconify-icon>
+              </div>
+              <h3 class="font-display font-medium text-sm mb-1">LinkedIn</h3>
+              <p class="text-textSecondary text-xs">Connect with me</p>
+            </a>
+
+            <a
+              id="contact-whatsapp-card"
+              href="https://wa.me/8801318090383"
+              target="_blank"
+              class="group bg-surface rounded-2xl p-6 border border-white/5 text-center card-hover hover:border-accent/30"
+            >
+              <div
+                class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors"
+              >
+                <iconify-icon
+                  icon="mdi:whatsapp"
+                  class="text-xl text-accent"
+                ></iconify-icon>
+              </div>
+              <h3 class="font-display font-medium text-sm mb-1">WhatsApp</h3>
+              <p class="text-textSecondary text-xs">Message me directly</p>
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div class="text-center">
+            <p class="text-muted text-sm mb-6 tracking-wider uppercase">
+              Find me on
+            </p>
+            <div class="flex items-center justify-center gap-4 flex-wrap">
+              <a
+                id="social-github-link"
+                href="https://github.com/Swapnil-360"
+                target="_blank"
+                class="social-icon w-12 h-12 bg-surface border border-white/10 rounded-xl flex items-center justify-center text-textSecondary hover:border-accent/50"
+                title="GitHub"
+              >
+                <iconify-icon icon="mdi:github" class="text-xl"></iconify-icon>
+              </a>
+              <a
+                id="social-linkedin-link"
+                href="https://www.linkedin.com/in/mr-swapnil/"
+                target="_blank"
+                class="social-icon w-12 h-12 bg-surface border border-white/10 rounded-xl flex items-center justify-center text-textSecondary hover:border-accent/50"
+                title="LinkedIn"
+              >
+                <iconify-icon
+                  icon="mdi:linkedin"
+                  class="text-xl"
+                ></iconify-icon>
+              </a>
+              <a
+                id="social-x-link"
+                href="https://x.com/thomascryptoxx"
+                target="_blank"
+                class="social-icon w-12 h-12 bg-surface border border-white/10 rounded-xl flex items-center justify-center text-textSecondary hover:border-accent/50"
+                title="X (Twitter)"
+              >
+                <iconify-icon
+                  icon="ri:twitter-x-fill"
+                  class="text-xl"
+                ></iconify-icon>
+              </a>
+              <a
+                id="social-facebook-link"
+                href="https://www.facebook.com/mr.swapnil360/"
+                target="_blank"
+                class="social-icon w-12 h-12 bg-surface border border-white/10 rounded-xl flex items-center justify-center text-textSecondary hover:border-accent/50"
+                title="Facebook"
+              >
+                <iconify-icon
+                  icon="mdi:facebook"
+                  class="text-xl"
+                ></iconify-icon>
+              </a>
+              <a
+                id="social-instagram-link"
+                href="https://www.instagram.com/callmeswap/"
+                target="_blank"
+                class="social-icon w-12 h-12 bg-surface border border-white/10 rounded-xl flex items-center justify-center text-textSecondary hover:border-accent/50"
+                title="Instagram"
+              >
+                <iconify-icon
+                  icon="mdi:instagram"
+                  class="text-xl"
+                ></iconify-icon>
+              </a>
+              <a
+                id="social-whatsapp-link"
+                href="https://wa.me/8801318090383"
+                target="_blank"
+                class="social-icon w-12 h-12 bg-surface border border-white/10 rounded-xl flex items-center justify-center text-textSecondary hover:border-accent/50"
+                title="WhatsApp"
+              >
+                <iconify-icon
+                  icon="mdi:whatsapp"
+                  class="text-xl"
+                ></iconify-icon>
+              </a>
+              <a
+                id="social-telegram-link"
+                href="https://t.me/swapnil360"
+                target="_blank"
+                class="social-icon w-12 h-12 bg-surface border border-white/10 rounded-xl flex items-center justify-center text-textSecondary hover:border-accent/50"
+                title="Telegram"
+              >
+                <iconify-icon
+                  icon="mdi:telegram"
+                  class="text-xl"
+                ></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="border-t border-white/5 py-8 bg-surface">
+        <div
+          class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <div class="flex items-center gap-2 text-sm text-muted">
+            <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+            Available for opportunities
+          </div>
+          <p class="text-sm text-muted">
+            © 2025 Md. Miftahur Rahman Swapnil. Crafted with passion.
+          </p>
+          <a
+            id="footer-top-link"
+            href="#hero"
+            class="text-sm text-muted hover:text-accent transition-colors flex items-center gap-1"
+          >
+            Back to top <iconify-icon icon="lucide:arrow-up"></iconify-icon>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
